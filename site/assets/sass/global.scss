@@ -1,0 +1,1181 @@
+/*import*/
+
+@import url("fonts.css");
+@import url("spectre.css");
+@import url("shadowbox.css");
+
+
+
+/*cores*/
+$vermelho: #be2026;
+$vermelhoRGB: rgba(190, 32, 38, 0.6);  	
+$vermelhoTitulo: #f8a995;
+$preto: #000000;
+$branco: #ffffff;
+$pretoRGB: rgba(0,0,0,0.6);
+$texLogo: #8d8d8d;
+/**/
+
+/*bts*/
+$btHeader: 500px;
+$btHeaderMobile: 440px;
+$btAlturaClientes: 234px;
+
+
+
+/*grid 1560*/
+$grid1560: 1560px;
+$grid1280: 1150px;
+$grid1024: 900px;
+$grid768: 700px;
+$grid568: 500px;
+$grid480: 280px;
+
+@mixin grid-1560(){
+	width: $grid1560;
+	margin:0 auto;
+}
+
+@mixin grid-1280(){
+	width: $grid1280;
+	margin:0 auto;
+}
+
+@mixin grid-1024(){
+	width: $grid1024;
+	margin:0 auto;
+}
+
+@mixin grid-768(){
+	width: $grid768;
+	margin:0 auto;
+}
+
+@mixin grid-568(){
+	width: $grid568;
+	margin:0 auto;
+}
+
+@mixin grid-480(){
+	width: $grid480;
+	margin:0 auto;
+}
+/**/
+
+/*converter rem*/
+$browser-context: 16;
+
+@function rem($pixels, $context: $browser-context) {
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+
+	@return $pixels / $context * 1rem;
+}
+
+/*alphas*/
+@mixin vermelhoAlpha60(){	
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; 
+	background-color: $vermelhoRGB;  	
+}
+@mixin pretoAlpha60(){	
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; 
+	background-color: $pretoRGB;  	
+}
+
+
+@mixin bordaVermelha() {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; 
+	outline: 16px solid $vermelhoRGB;
+	outline-offset: -16px;
+}
+
+
+/*efeitos*/
+@mixin efeito-transicao(){
+	transition: all 0.2s ease-in-out !important;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;  
+}
+
+@mixin efeito-botao(){
+	box-shadow: 0px 0px 50px $pretoRGB;
+	z-index: 5;
+	-webkit-transition: all 200ms ease-in;
+	-webkit-transform: scale(1.2);
+	-ms-transition: all 200ms ease-in;
+	-ms-transform: scale(1.2);
+	-moz-transition: all 200ms ease-in;
+	-moz-transform: scale(1.2);
+	transition: all 200ms ease-in;
+	transform: scale(1.2);
+	border:0;
+}
+
+
+@mixin botao-padrao() {	
+	cursor: pointer;
+	border-radius: rem(4px);
+	-moz-border-radius: rem(4px);
+	-webkit-border-radius: rem(4px);	
+}
+
+@mixin gradiente-clientes() {
+	background: $preto;
+}
+
+
+h1 {font-family: ProximaLight; font-weight: 100;}
+
+/*background*/
+
+body {	
+	background: $preto !important;
+}
+
+li{list-style: none;}
+
+.links-eventos {
+	visibility: hidden;
+	display: block;
+	position: absolute;
+}
+
+
+ul.social {
+
+	display: table;
+    margin: 0;
+    position: relative;
+    left: rem(150px);
+	
+	& li {		
+		background:$vermelhoTitulo;
+		width: 50px;
+		height: 40px;
+		display: table-cell;
+		vertical-align: middle;
+		float: left;
+		margin-right: 10px;
+		@include efeito-transicao();
+
+		&:hover {
+			background: $vermelho;
+
+			& svg path {
+
+				fill: $branco;
+			}
+		}
+
+
+			& svg {
+				margin: 6px auto;
+				width: 100%;
+				
+
+					& path {
+						fill: $preto;
+					}
+
+
+			}
+	}
+}
+
+
+/*inputs form*/
+.form-input {
+	background: $preto;
+	border: none;
+	color: $branco;
+	padding: rem(40px);
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: $vermelhoTitulo;
+	text-transform: uppercase;
+}
+::-moz-placeholder { /* Firefox 19+ */
+	color: $vermelhoTitulo;
+	text-transform: uppercase;
+}
+:-ms-input-placeholder { /* IE 10+ */
+	color: $vermelhoTitulo;
+	text-transform: uppercase;
+}
+:-moz-placeholder { /* Firefox 18- */
+	color: $vermelhoTitulo;
+	text-transform: uppercase;
+}
+
+
+.bt-form-enviar {
+	padding: rem(30px);
+	background: $vermelhoTitulo;
+	border: none;
+	color: $preto;
+	line-height: rem(5px);
+	@include efeito-transicao();
+	cursor: pointer;
+	text-transform: uppercase;					
+
+	&:hover {
+		background: $preto;
+		color: $branco;
+		@include efeito-transicao();					
+	}
+}
+
+
+
+/*botoes*/
+.box-botao {
+	display: inline-block;
+
+	& a {
+		display: inline-block;
+		margin-bottom: rem(8px);
+	}
+
+	& .bg-bt {		    
+		position: absolute;    
+		@include botao-padrao();
+		@include efeito-transicao();					
+	}
+
+	& .cx {		
+		position: relative;
+		vertical-align: middle;
+		display: table-cell;
+		cursor: pointer;
+
+		& svg {
+			width: rem(20px);				
+			top: 50%;
+			margin-top: rem(-20px)/2 + rem(-20px);
+			position: absolute;
+			right: rem(40px);
+
+		}   
+	}
+
+	& .bt {
+		cursor: pointer;
+		position: relative;		
+		margin-left: 23px;
+
+
+		& img {			
+			float: left;
+			padding-right: rem(30px);
+		}
+
+		& .texLogo {
+			float: left;
+			display: inline-block;
+			color: $texLogo;
+		}
+
+
+	}
+
+}
+
+.hoverBT {
+	@include efeito-botao();
+	@include efeito-transicao();
+}
+
+
+.cores-estrutura {
+
+	&.projetos {
+		&	#textoProjetos {
+			color: $vermelhoTitulo !important;
+			transition-property: color;
+			transition-duration: 1s;
+			transition-timing-function: linear;	
+		}
+	}
+
+}
+
+.sem-cores-estrutura {
+
+	&.projetos {
+		&	#textoProjetos {
+			color: $texLogo !important;
+			transition-property: color;
+			transition-duration: 1s;
+			transition-timing-function: linear;	
+		}
+	}
+
+}
+
+
+.fundo-clientes {	
+	background: $vermelhoTitulo !important;
+	transition-property: background;
+	transition-duration: 1s;
+	transition-timing-function: linear;
+
+	&.clientes h1 {
+		color: $preto !important;
+		transition-property: color;
+		transition-duration: 1s;
+		transition-timing-function: linear;	
+	}
+
+	& .tips {
+		color: $vermelhoTitulo !important;
+		transition-property: color;
+		transition-duration: 1s;
+		transition-timing-function: linear;	
+	}	
+
+}
+
+.gradiente-clientes {		
+	background: $pretoRGB !important;
+	transition-property: background;
+	transition-duration: 3s;
+	transition-timing-function: linear;	
+
+	&.clientes h1 {
+		color: $branco !important;
+		transition-property: color;
+		transition-duration: 3s;
+		transition-timing-function: linear;	
+	}	
+
+	& .tips {
+		color: $vermelhoTitulo !important;
+		transition-property: color;
+		transition-duration: 5s;
+		transition-timing-function: linear;	
+	}	
+
+}
+
+
+/*layout*/
+/*logos*/
+
+.header {
+	position: absolute;	
+	z-index: 10;
+
+	& .bg-bt {
+		width: rem($btHeader);
+		height: rem(134px);
+		background: $vermelhoTitulo;
+		position: absolute;    
+		@include botao-padrao();
+		@include efeito-transicao();					
+	}
+
+	& .cx {
+		width: rem($btHeader);
+		height: rem(134px);
+	}
+
+	& .bt {
+		font-family: ProximaLight;
+		font-size: rem(25px);		
+		text-transform: uppercase;
+		margin-left: 23px;
+
+	}
+
+	& .box-menu-mobile {
+		@include pretoAlpha60();
+		display: none;
+
+		& .menu {
+			font-family: ProximaLight;
+			text-transform: uppercase;
+
+			& li a {
+				color: $vermelhoTitulo;
+			}
+
+		}
+	}
+}
+
+
+
+.grid {
+	position: relative;	
+	padding-bottom: rem(100px);
+	z-index: 10;
+}
+
+.column {
+	padding: 0 !important;
+}
+
+.estrutura, .projetos, .clientes, .atendimento, .footer {
+	background-color: $vermelho;
+
+	& h1 {
+		color: $vermelhoTitulo;
+		padding-bottom: rem(50px);
+
+
+	}
+
+
+	& .grid{
+		padding-top: rem(80px);
+		border-bottom: 1px solid $vermelhoTitulo;		
+	}
+
+
+	&.clientes {
+
+		& h1 {
+			padding-bottom: 0 !important;
+		}
+
+		& img {
+			outline: 0;
+			outline-offset: 0;
+		}
+
+		& .tips {
+			text-transform: uppercase;
+			font-size: rem(18px);
+			padding-left: rem(20px);
+			margin-bottom: rem(80px);				
+		}
+
+		& .bg-bt {
+			width: 50%;
+			height: rem($btAlturaClientes);
+			background: $branco;
+			position: absolute;    
+			@include botao-padrao();
+			@include efeito-transicao();
+		}
+
+		& .cx {
+			width: 1%;
+			height: rem($btAlturaClientes);
+			right: rem(20px);
+		}
+
+		& .bt {
+			font-family: ProximaLight;
+			font-size: rem(25px);		
+			text-transform: uppercase;
+			margin-left: 23px;
+
+		}
+
+	}		
+
+
+
+	& p {
+		font-family: ProximaLight !important;		
+		color: $branco;
+		text-align: justify;
+	}
+
+	& .img-responsive {		
+		@include bordaVermelha();     
+	}
+
+	&.projetos {
+
+		& .hide-xs {
+			position: relative;
+
+			& img {
+				position: absolute;
+				bottom: rem(-100px);
+				outline: 0;
+				outline-offset: 0;
+			}
+
+		}
+
+		&	#textoProjetos {
+			font-family: ProximaLight !important;
+			text-transform: uppercase;			
+			word-break: break-all;			
+		}
+	}
+
+	&.atendimento {
+
+		& #textoAtendimento {
+			float: right;
+			padding: rem(60px);
+			font-size: rem(28px);
+			color: $branco;
+
+			& h2 {
+				font-family: ProximaLight !important;
+				font-weight: 100 !important;
+				& strong {
+					font-family: ProximaBold !important;
+				}
+			}
+
+		}
+	}
+
+	&.footer {
+		background-color: $preto;
+
+		& .grid {
+			border-bottom: 0 !important;
+		}	
+
+		& .menu {
+
+			li a {
+				color: $vermelhoTitulo;
+
+				&:hover {
+					color: $branco;
+				}
+			}
+		}
+
+		& #dadosFooter {
+			color: $vermelhoTitulo;
+			position: relative;
+			left: rem(145px);
+			top: rem(-90px);
+			display: table;
+		}
+	}
+
+}
+
+
+
+.logo-header {
+	width: 100%;
+	position: relative;
+	top: 9rem;		
+	@include pretoAlpha60();	
+
+	display: inline-block;
+
+	& svg {
+		width: 50%;
+		float: right;
+		right: 5rem;
+		position: relative;
+	}
+}
+
+.logo-mobile {
+	width: 100%;
+	position: relative;	
+
+	& svg {
+		width: 80%;			
+		position: relative;			
+		left: 50%;
+		margin-left: -39% !important;			
+	}
+
+}
+
+.logo-mobile-header {
+	display: none;
+	width: 100%;
+	position: relative;	
+
+	& svg {
+		width: 80%;			
+		position: relative;			
+		left: 50%;
+		margin-left: -39% !important;			
+	}
+
+}
+
+
+#slide {
+	position: relative;	
+}
+
+
+/*mneu*/
+.menu-header {
+	background: $vermelho;
+	text-transform: uppercase;
+	padding: 30px 0px;
+	margin: 0 !important;
+
+	&.tab .tab-item a{
+		font-weight: bold;
+	}
+
+	&.tab .tab-item a:hover, .tab .tab-item a:focus{
+		color: $branco;
+		border-bottom-color: $branco;			
+	}
+
+	&.tab{
+		border-bottom: 0;	
+	}		
+}
+
+/*textos*/
+.box-texto-header {	
+	display: block;
+	@include vermelhoAlpha60();
+
+	&	#textoHeader {
+		font-family: ProximaLight !important;
+		color: $branco;		
+		word-break: break-all;		
+	}
+}
+
+
+
+
+/*grid*/
+
+
+@media only screen and (min-width: 1560px) {
+
+	.grid, .header{
+		@include grid-1560();
+
+		&.breakpoint {			
+			width: $grid1560;
+			left: 50%;
+			margin-left: -$grid1560/2;
+
+			&.header .box-botao {
+				position: absolute;
+				margin-top: rem(300px);
+				right: rem(50px);
+			}
+
+		}
+
+	}
+
+	.clientes {
+
+		& .bt {
+
+			& img {   		
+
+			}
+
+			& .texLogo {
+				padding-top: rem(60px);
+
+			}
+
+
+		}
+
+
+	}
+
+
+
+	.box-texto-header {		
+
+		&	#textoHeader {				
+			font-size: rem(245px);
+			line-height: rem(245px - 45);
+			padding: rem(120px) rem(20px) rem(120px) rem(20px);		
+			letter-spacing: rem(-20px);								
+		}
+	}
+
+
+	.estrutura, .projetos, .clientes {
+
+		& h1 {
+			font-size: rem(100px);
+		}
+
+		& p:first-child {
+			padding-top: rem(185px);
+		}
+
+		& p {		
+			font-size: rem(50px);			
+		}
+
+		&.projetos {
+			&	#textoProjetos {			
+				font-size: rem(130px);
+				line-height: rem(120px);						
+				letter-spacing: rem(-10px);		
+			}
+		}
+
+	}
+
+
+}
+
+
+@media only screen and (max-width: 1559px) {
+	.grid, .header{
+		@include grid-1280();
+		&.breakpoint {			
+			width: $grid1280;
+			left: 50%;
+			margin-left: -$grid1280/2;			
+		}
+
+		&.header .box-botao {
+			position: absolute;
+			margin-top: rem(300px);
+			right: rem(50px);
+		}						
+	}
+
+	.box-texto-header {		
+
+		&	#textoHeader {				
+			font-size: rem(190px);
+			line-height: rem(190px - 40);	
+			padding: rem(90px) rem(20px) rem(180px) rem(20px);		
+			letter-spacing: rem(-10px);							
+		}
+	}
+
+	.estrutura, .projetos, .clientes {
+
+
+		& p:first-child {
+			padding-top: rem(185px);
+		}
+
+		& p {		
+			font-size: rem(35px);
+
+		}
+
+		& #imgEstrutura {
+			width: 90%;
+		}
+
+		&.projetos {
+
+			&	#textoProjetos {			
+				font-size: rem(100px);
+				line-height: rem(100px);						
+				letter-spacing: rem(-8px);		
+			}
+		}
+
+	}
+
+	.texLogo {				
+		display: none !important;				
+	}
+
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+	.grid, .header{
+		@include grid-1024();
+		&.breakpoint {			
+			width: $grid1024;
+			left: 50%;
+			margin-left: -$grid1024/2;
+
+			& .menu-header li a{
+				font-size: rem(18px);
+
+			}
+		}
+
+		&.header .box-botao {
+			position: absolute;
+			margin-top: rem(300px);
+			right: rem(50px);
+		}						
+	}
+
+	.box-texto-header {		
+
+		&	#textoHeader {				
+			font-size: rem(155px);
+			line-height: rem(155px - 40);	
+			padding: rem(90px) rem(20px) rem(180px) rem(20px);		
+			letter-spacing: rem(-10px);							
+		}
+	}
+
+	&.projetos {
+		&	#textoProjetos {			
+			font-size: rem(80px) !important;
+			line-height: rem(120px);						
+			letter-spacing: rem(-10px);		
+		}
+	}
+
+	.logo-header {
+
+		& svg {
+			width: 70%;
+		}
+	}
+
+	&.atendimento {
+
+		& #textoAtendimento {
+			margin-top: rem(85px);			
+			padding: rem(60px);
+			font-size: rem(28px);
+			color: $branco;
+
+			& h2 {
+				font-family: ProximaLight !important;
+				font-size: rem(50px);
+				font-weight: 100 !important;
+				& strong {
+					font-family: ProximaBold !important;
+				}
+			}
+
+		}
+	}
+
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	.grid, .header{
+		@include grid-768();
+		&.breakpoint {			
+			width: $grid768;
+			left: 50%;
+			margin-left: -$grid768/2;
+
+			& .menu-header {
+				display: none;
+			}			
+		}
+
+		&.header .box-botao {
+			position: absolute;
+			margin-top: rem(300px);
+			right: rem(50px);
+		}
+
+		& .box-menu-mobile {
+			display: inline-flex;
+		}
+	}
+
+	.box-texto-header {		
+
+		&	#textoHeader {				
+			font-size: rem(85px);
+			line-height: rem(85px - 20);	
+			padding: rem(20px) rem(180px) rem(180px) rem(20px);		
+			letter-spacing: rem(-10px);							
+		}
+	}
+
+	&.projetos {
+		&	#textoProjetos {			
+			font-size: rem(60px) !important;
+			line-height: rem(60px) !important;						
+			letter-spacing: rem(-2px) !important;		
+		}
+	}
+
+	& .estrutura {
+		& p:first-child {
+			padding-top: rem(140px) !important;
+		}
+
+		& p {		
+			font-size: rem(30px) !important;			
+		}
+	}
+
+	.logo-header {
+		display: none;
+	}	
+
+}
+
+@media only screen and (max-width: 568px) {
+
+
+	.grid, .header{
+		@include grid-568();
+		&.breakpoint {			
+			width: $grid568;
+			left: 50%;
+			margin-left: -$grid568/2;			
+
+			& .menu-header {
+				display: none;
+			}			
+		}
+
+		.box-texto-header { display: none; }
+
+		&.header .box-botao {
+			position: absolute;
+			margin-top: rem(300px);
+			right: rem(135px);
+			z-index: 50;
+
+		}
+
+	}
+
+	.estrutura {
+		padding-top: rem(100px);
+	}
+
+	.projetos {
+
+		&	#textoProjetos {			
+			font-size: rem(40px) !important;
+			line-height: rem(40px) !important;						
+			letter-spacing: rem(-10px);		
+		}
+
+	}
+
+	.cx {
+
+
+		& svg {
+			display: none;
+
+		}   
+	}
+
+
+}
+
+
+@media only screen and (max-width: 480px) {
+
+	.columns {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	.grid, .header{
+		@include grid-480();
+		&.breakpoint {			
+			width: $grid480;
+			left: 50%;
+			margin-left: -$grid480/2;
+
+			& .menu-header {
+				display: none;
+			}			
+		}
+
+		& .logo-mobile {
+			display: none;
+		}
+
+		&.header .box-botao {
+			position: absolute;
+			margin-top: rem(10px);
+			right: rem(50px);
+			z-index: 50;
+		}
+
+		& .bg-bt {
+			width: rem($btHeaderMobile);
+			height: rem(134px);
+			background: $vermelhoTitulo;
+			position: absolute;    
+			@include botao-padrao();
+			@include efeito-transicao();					
+		}
+
+		& .cx {
+			width: rem($btHeaderMobile);
+			height: rem(134px);
+
+			& svg {
+				display: block;
+				width: rem(10px);				
+				top: 50%;
+				margin-top: rem(-10px)/2 + rem(-10px);
+				position: absolute;
+				right: rem(10px);
+			}   
+		}
+
+		& .bt {
+			font-family: ProximaLight;
+			font-size: rem(20px);				
+			margin-left: 23px;
+
+		}
+
+		& .box-menu-mobile {
+			display: none;
+		}
+
+		& .box-menu-mobile {
+			display: inline-flex;
+		}
+	}
+
+	.box-texto-header {
+
+		display: inline-block !important;		
+
+		&	#textoHeader {				
+			font-size: rem(80px);
+			line-height: rem(70px);	
+			padding: rem(20px) rem(40px) rem(40px) rem(20px);		
+			letter-spacing: rem(-5px);
+			margin-top: rem(50px);
+		}
+	}
+
+
+
+	.estrutura, .projetos, .clientes, .atendimento, .footer {
+
+		& h1 {
+			font-size: rem(60px);
+		}
+
+		& p:first-child {
+			padding-top: rem(20px) !important;
+		}
+
+		& p {		
+			font-size: rem(20px) !important;			
+		}
+
+		&.estrutura {
+
+			padding-top: 0 !important;
+
+
+			& .grid{
+				padding-top: rem(700px);
+				position: relative;
+				z-index: 1;
+
+			}
+
+			& #imgEstrutura {
+				width: 100% !important;
+			}
+
+		}
+
+		&.projetos {
+			&	#textoProjetos {			
+				font-size: rem(35px) !important;
+				line-height: rem(40px) !important;						
+				letter-spacing: rem(-10px);		
+			}
+		}
+
+		&.clientes {
+
+			& .bg-bt {
+				width: 100%;
+				height: rem($btAlturaClientes);
+				background: $branco;
+				position: absolute;    
+				@include botao-padrao();
+				@include efeito-transicao();
+			}
+
+			& .cx {
+				width: 1%;
+				height: rem($btAlturaClientes);
+				right: rem(20px);			
+
+			}
+
+		}
+
+		&.atendimento {
+
+			& #textoAtendimento {
+				float: left !important;
+				margin-top: rem(60px);			
+				padding: 0;
+				font-size: rem(26px);
+				color: $branco;
+
+				& h2 {
+					font-family: ProximaLight !important;
+					font-size: rem(50px);
+					font-weight: 100 !important;
+					& strong {
+						font-family: ProximaBold !important;
+					}
+				}
+
+			}
+		}
+
+		&.footer {			
+			background-color: $preto;
+			padding-bottom: rem(100px);
+
+			& .logo-footer {
+				& svg {
+					width: rem(450px);
+					margin-top: -45px;
+
+				}
+			}
+
+
+
+			& #dadosFooter {
+				font-size: rem(20px);
+				position: absolute;
+				margin: rem(220px) rem(-70px) rem(0px) rem(-40px);
+				
+			}
+		}
+
+
+	}
+	.logo-mobile-header {
+		display: block;
+	}
+
+	ul.social {		
+		margin: 0 auto !important;	    
+	    position: relative;
+	    top: rem(120px);
+	    left: rem(10px);
+	}
+
+}
+
+
+
