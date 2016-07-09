@@ -1,4 +1,6 @@
-var $ = require('jQuery');
+import $ from 'jquery'
+// import ImageLoaderFactory from '../../../node_modules/jquery-image-loader/dist/ImageLoader.js'
+
 
 //pegando conteudo do json
 $.getJSON(
@@ -18,6 +20,8 @@ $('<img class="img-responsive rounded" src="site/img/' + images[Math.floor(Math.
 
 var estrutura = ['estrutura-1.jpg', 'estrutura-2.jpg', 'estrutura-3.jpg', 'estrutura-4.jpg', 'estrutura-5.jpg'];
 $('<img class="img-responsive rounded" src="site/img/' + estrutura[Math.floor(Math.random() * estrutura.length)] + '">').appendTo('#imgEstrutura');
+
+
 
 
 // $('#slide').css({'background-image': 'url(site/img/' + images[Math.floor(Math.random() * images.length)] + ')'});
