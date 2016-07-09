@@ -222,6 +222,37 @@ $browser-context: 16;
 
 
 
+@media only screen and (max-width: 480px) {
+
+#sb-nav a{
+	width:50px;	
+}
+
+	#sb-nav-close::before{
+	content: "×";	
+	font-size: 30px;
+	position: relative;
+	top: -2px;		
+}
+
+#sb-nav-next::before{
+	content: "›";
+	font-size: 30px;
+	position: relative;
+	top: -5px;		
+}
+
+#sb-nav-previous::before{
+	content: "‹";	
+	font-size: 30px;		
+	position: relative;
+	top: -5px;		
+}
+
+}
+
+
+
 
 #sb-nav-play{
 
