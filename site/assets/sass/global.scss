@@ -278,7 +278,7 @@ ul.social {
 		& .texLogo {
 			float: left;
 			display: inline-block;
-			color: $texLogo;
+			color: $texLogo;			
 		}
 
 
@@ -1019,12 +1019,7 @@ ul.social {
 			height: rem(134px);
 
 			& svg {
-				display: block;
-				width: rem(10px);				
-				top: 50%;
-				margin-top: rem(-10px)/2 + rem(-10px);
-				position: absolute;
-				right: rem(10px);
+				display: none;				
 			}   
 		}
 
@@ -1032,6 +1027,14 @@ ul.social {
 			font-family: ProximaLight;
 			font-size: rem(20px);				
 			margin-left: 23px;
+
+				& img {
+					
+					display: block;
+        	margin: auto;
+        	float: none;
+        	padding-right: 0;
+				}
 
 		}
 
@@ -1046,7 +1049,8 @@ ul.social {
 
 	.box-texto-header {
 
-		display: inline-block !important;		
+		display: inline-block !important;
+		margin-top: rem(100px);		
 
 		&	#textoHeader {				
 			font-size: rem(80px);
@@ -1075,7 +1079,7 @@ ul.social {
 
 		&.estrutura {
 
-			padding-top: 0 !important;
+			padding-top: rem(100px) !important;
 
 
 			& .grid{
