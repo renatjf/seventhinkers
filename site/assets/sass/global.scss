@@ -663,9 +663,10 @@ ul.social {
 			margin-left: -$grid1560/2;
 
 			&.header .box-botao {
-				position: absolute;
+				position: relative;
 				margin-top: rem(300px);
-				right: rem(50px);
+				right: rem(150px);
+				float: right;
 			}
 
 		}
@@ -742,9 +743,12 @@ ul.social {
 		}
 
 		&.header .box-botao {
-			position: absolute;
+			
+			position: relative;
 			margin-top: rem(300px);
-			right: rem(50px);
+			
+			float: right;
+			
 		}						
 	}
 
