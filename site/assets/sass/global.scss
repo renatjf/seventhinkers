@@ -522,11 +522,49 @@ ul.social {
 			font-size: rem(28px);
 			color: $branco;
 
+			& hr {
+				background-color: $vermelhoTitulo;
+				height: rem(1px);
+				border: rem(1px);
+				margin: rem(50px) rem(0) rem(0) rem(0);
+			}
+
 			& h2 {
 				font-family: ProximaLight !important;
 				font-weight: 100 !important;
 				& strong {
 					font-family: ProximaBold !important;
+				}
+			}
+
+			& h3 {
+				font-family: ProximaLight !important;
+				font-weight: 100 !important;
+				& strong {
+					font-family: ProximaBold !important;
+				}
+			}
+
+			& ul {
+				& li {
+					padding-top: rem(20px);
+					padding-bottom: rem(5px);
+					border-bottom: rem(1px) solid $vermelhoTitulo;
+
+					& a {
+						text-decoration: none;
+						color: $vermelhoTitulo;
+
+							&:hover {
+
+								color: $branco;
+
+							}
+					}
+				}
+
+				& li:last-child {
+					border-bottom: 0;
 				}
 			}
 

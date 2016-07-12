@@ -9,7 +9,7 @@ $.getJSON(
 		$('#textoHeader').html(data.textoHeader);
 		$('#textoProjetos').html(data.textoProjetos);						
 		$('#textoEstrutura').html(data.textoEstrutura);
-		$('#textoAtendimento').html(data.textoAtendimento);
+		$('#textoAtendimento').html(data.textoAtendimento);		
 		$('#dadosFooter').html(data.dadosFooter);																								
 	}
 	);
