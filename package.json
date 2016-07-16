@@ -1,6 +1,6 @@
 {
   "name": "seventhinkers",
-  "version": "0.0.0",
+  "version": "2.0",
   "description": "Pagina de Eventos",
   "main": "gulpfile.js",
   "scripts": {
@@ -34,12 +34,8 @@
     "gulp": "^3.9.1",
     "gulp-imagemin": "^2.4.0",
     "gulp-sass": "^2.2.0",
-    "imagemin": "^5.2.2",
-    "imagemin-mozjpeg": "^6.0.0",
-    "imagemin-pngquant": "^5.0.0",
-    "jquery-image-loader": "0.0.3",
-    "node-sass": "^3.7.0",
-    "sass-loader": "^3.2.0",
+    "imagemin": "^5.2.2",    
+    "node-sass": "^3.7.0",    
     "spectre.css": "^0.1.24",
     "webpack-stream": "^3.2.0"
   }
