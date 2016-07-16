@@ -18,12 +18,13 @@ gulp.task('sass', function () {
 
 
 //resize imagem galeria
+var larguraImagem = 1000;
 gulp.task('resize-galeria', function () {
   gulp.src('./site/assets/img/eventos/**/*.{gif,jpg,png}').pipe(jimp({
     '-galeria': {
-      resize: { width: 1000 }           
+      resize: { width: larguraImagem }           
     }
-
+    
   }))
 
   .pipe(imagemin({
@@ -34,6 +35,7 @@ gulp.task('resize-galeria', function () {
   }))
 
   .pipe(gulp.dest('./site/assets/img/eventos/resize/'));
+
 });
 
 
@@ -48,13 +50,16 @@ gulp.task('img', function() {
   }))
 
   .pipe(gulp.dest('./site/img/'));
+
 });
 
 
 //deleta imagem nao usada da galeria
 gulp.task('delete', function () {
   return gulp.src('./site/img/eventos/*.jpg', {read: false})
+
     .pipe(clean());
+
 });
 
 

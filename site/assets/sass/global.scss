@@ -149,10 +149,10 @@ li{list-style: none;}
 ul.social {
 
 	display: table;
-    margin: 0;
-    position: relative;
-    left: rem(150px);
-	
+	margin: 0;
+	position: relative;
+	left: rem(150px);
+
 	& li {		
 		background:$vermelhoTitulo;
 		width: 50px;
@@ -173,17 +173,17 @@ ul.social {
 		}
 
 
-			& svg {
-				margin: 6px auto;
-				width: 100%;
-				
-
-					& path {
-						fill: $preto;
-					}
+		& svg {
+			margin: 6px auto;
+			width: 100%;
 
 
+			& path {
+				fill: $preto;
 			}
+
+
+		}
 	}
 }
 
@@ -555,11 +555,11 @@ ul.social {
 						text-decoration: none;
 						color: $vermelhoTitulo;
 
-							&:hover {
+						&:hover {
 
-								color: $branco;
+							color: $branco;
 
-							}
+						}
 					}
 				}
 
@@ -711,10 +711,6 @@ ul.social {
 
 		& .bt {
 
-			& img {   		
-
-			}
-
 			& .texLogo {
 				padding-top: rem(60px);
 
@@ -777,12 +773,12 @@ ul.social {
 		}
 
 		&.header .box-botao {
-			
+
 			position: relative;
 			margin-top: rem(300px);
-			
+
 			float: right;
-			
+
 		}						
 	}
 
@@ -992,7 +988,7 @@ ul.social {
 
 	.projetos {
 
-		&	#textoProjetos {			
+		& #textoProjetos {			
 			font-size: rem(40px) !important;
 			line-height: rem(40px) !important;						
 			letter-spacing: rem(-10px);		
@@ -1000,14 +996,28 @@ ul.social {
 
 	}
 
-	.cx {
+	.clientes {
 
+		.cx {
 
-		& svg {
-			display: none;
+			& svg {
+				display: none;
+			}
+		}
 
-		}   
+		.bt {
+
+			& img {
+				display: block;
+				margin: auto;
+				float: none;
+				padding-right: 0;
+			}
+		}
+
 	}
+
+
 
 
 }
@@ -1057,7 +1067,9 @@ ul.social {
 			height: rem(134px);
 
 			& svg {
-				display: none;				
+				width: rem(15px);
+				top: 56%;
+				right: rem(5px);
 			}   
 		}
 
@@ -1066,13 +1078,13 @@ ul.social {
 			font-size: rem(20px);				
 			margin-left: 23px;
 
-				& img {
-					
-					display: block;
-        	margin: auto;
-        	float: none;
-        	padding-right: 0;
-				}
+			& img {
+
+				display: block;
+				margin: auto;
+				float: none;
+				padding-right: 0;
+			}
 
 		}
 
@@ -1200,7 +1212,7 @@ ul.social {
 				font-size: rem(20px);
 				position: absolute;
 				margin: rem(220px) rem(-70px) rem(0px) rem(-40px);
-				
+
 			}
 		}
 
@@ -1212,9 +1224,9 @@ ul.social {
 
 	ul.social {		
 		margin: 0 auto !important;	    
-	    position: relative;
-	    top: rem(120px);
-	    left: rem(10px);
+		position: relative;
+		top: rem(120px);
+		left: rem(10px);
 	}
 
 }
