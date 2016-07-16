@@ -2,9 +2,11 @@
 
 var gulp    = require('gulp'),
 sass        = require('gulp-sass'),
+jimp        = require('gulp-jimp'),
 imagemin    = require('gulp-imagemin'),
 webpack     = require('webpack-stream'),
-browserSync = require('browser-sync');
+browserSync = require('browser-sync'),
+clean       = require('gulp-clean');
 
 //sass
 gulp.task('sass', function () {
@@ -14,6 +16,27 @@ gulp.task('sass', function () {
   .pipe(gulp.dest('./site/css'));
 });
 
+
+//resize imagem galeria
+gulp.task('resize-galeria', function () {
+  gulp.src('./site/assets/img/eventos/**/*.{gif,jpg,png}').pipe(jimp({
+    '-galeria': {
+      resize: { width: 1000 }           
+    }
+
+  }))
+
+  .pipe(imagemin({
+    optimizationLevel: 7,
+    progressive: true,
+    interlaced: true,
+
+  }))
+
+  .pipe(gulp.dest('./site/assets/img/eventos/resize/'));
+});
+
+
 //imagemin
 gulp.task('img', function() {
   return gulp.src('./site/assets/img/**/*.{gif,jpg,png,svg}')
@@ -21,10 +44,17 @@ gulp.task('img', function() {
     optimizationLevel: 7,
     progressive: true,
     interlaced: true,
-    
+
   }))
 
   .pipe(gulp.dest('./site/img/'));
+});
+
+
+//deleta imagem nao usada da galeria
+gulp.task('delete', function () {
+  return gulp.src('./site/img/eventos/*.jpg', {read: false})
+    .pipe(clean());
 });
 
 
@@ -47,10 +77,10 @@ gulp.task('webpack-stream', function() {
 
 
 //view
-gulp.task('dev', ['sass', 'img', 'webpack-stream', 'browser-sync'], function() {
+gulp.task('dev', ['sass', 'webpack-stream', 'browser-sync' ], function() {
   gulp.watch('./site/assets/sass/**/*.scss', ['sass']);  
-  gulp.watch('./site/assets/img/**/*.{gif,jpg,png,svg}', ['img']);  
-  gulp.watch('./site/assets/components/**/*.js', ['webpack-stream']);
+  gulp.watch('./site/assets/components/**/*.js', ['webpack-stream']);  
+  
 });
 
 
