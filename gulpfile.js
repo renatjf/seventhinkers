@@ -22,9 +22,9 @@ var larguraImagem = 1000;
 gulp.task('resize-galeria', function () {
   gulp.src('./site/assets/img/eventos/**/*.{gif,jpg,png}').pipe(jimp({
     '-galeria': {
-      resize: { width: larguraImagem }           
+      resize: { width: larguraImagem }
     }
-    
+
   }))
 
   .pipe(imagemin({
@@ -37,6 +37,7 @@ gulp.task('resize-galeria', function () {
   .pipe(gulp.dest('./site/assets/img/eventos/resize/'));
 
 });
+
 
 
 //imagemin
@@ -54,13 +55,16 @@ gulp.task('img', function() {
 });
 
 
+
 //deleta imagem nao usada da galeria
 gulp.task('delete', function () {
   return gulp.src('./site/img/eventos/*.jpg', {read: false})
 
-    .pipe(clean());
+  .pipe(clean());
+
 
 });
+
 
 
 //browser-sync
@@ -77,15 +81,15 @@ gulp.task('browser-sync', function() {
 gulp.task('webpack-stream', function() {
   return gulp.src('./site/assets/components/root.js')
   .pipe(webpack( require('./webpack.config.js') ))
-  .pipe(gulp.dest('./site/js/'));   
+  .pipe(gulp.dest('./site/js/'));
 });
 
 
 //view
 gulp.task('dev', ['sass', 'webpack-stream', 'browser-sync' ], function() {
-  gulp.watch('./site/assets/sass/**/*.scss', ['sass']);  
-  gulp.watch('./site/assets/components/**/*.js', ['webpack-stream']);  
-  
+  gulp.watch('./site/assets/sass/**/*.scss', ['sass']);
+  gulp.watch('./site/assets/components/**/*.js', ['webpack-stream']);
+
 });
 
 
