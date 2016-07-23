@@ -372,13 +372,3 @@ $('.social #instagram a').attr('href','https://www.instagram.com/seven_thinkers/
 
 
 
-
-
-
-
-
-
-
-
-
-

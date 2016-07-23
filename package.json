@@ -2,9 +2,9 @@
   "name": "seventhinkers",
   "version": "0.0.0",
   "description": "Pagina de Eventos",
-  "main": "gulpfile.js",
+  "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+     "start": "node_modules/.bin/webpack-dev-server --config ./webpack.config.js --host 0.0.0.0 --port 8081"
   },
   "keywords": [
     "Seven Thinkers, Renato Freitas"
