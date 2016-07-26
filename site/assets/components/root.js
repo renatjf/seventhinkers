@@ -4,13 +4,14 @@ import $ from 'jquery'
 
 //pegando conteudo do json
 $.getJSON(
-	"/site/json/dados.json", 
+	"/site/json/dados.json",
 	function(data){
 		$('#textoHeader').html(data.textoHeader);
-		$('#textoProjetos').html(data.textoProjetos);						
+		$('#textoProjetos').html(data.textoProjetos);
 		$('#textoEstrutura').html(data.textoEstrutura);
-		$('#textoAtendimento').html(data.textoAtendimento);		
-		$('#dadosFooter').html(data.dadosFooter);																								
+		$('.tips').html(data.tips);
+		$('#textoAtendimento').html(data.textoAtendimento);
+		$('#dadosFooter').html(data.dadosFooter);
 	}
 	);
 
@@ -54,7 +55,7 @@ $('.clientes #amil').hover(function(){
 	 $('.clientes #amil .cx').css('zIndex', '10');
 },function(){
 	$('#amil .bg-bt').removeClass('hoverBT');
-	$('.clientes #amil .cx').css('zIndex', '0');	
+	$('.clientes #amil .cx').css('zIndex', '0');
 });
 $('.clientes #amil a').attr('href', 'http://www.amil.com.br');
 
@@ -65,7 +66,7 @@ $('.clientes #americas').hover(function(){
 	 $('.clientes #americas .cx').css('zIndex', '10');
 },function(){
 	$('#americas .bg-bt').removeClass('hoverBT');
-	$('.clientes #americas .cx').css('zIndex', '0');	
+	$('.clientes #americas .cx').css('zIndex', '0');
 });
 $('.clientes #americas a').attr('href', 'http://americasmedicalcity.com.br/');
 
@@ -87,7 +88,7 @@ $('.clientes #ez').hover(function(){
 	 $('.clientes #ez .cx').css('zIndex', '10');
 },function(){
 	$('#ez .bg-bt').removeClass('hoverBT');
-	$('.clientes #ez .cx').css('zIndex', '0');	
+	$('.clientes #ez .cx').css('zIndex', '0');
 });
 $('.clientes #ez a').attr('href', 'http://www.ezcommerce.com.br/');
 
@@ -97,7 +98,7 @@ $('.clientes #coi').hover(function(){
 	 $('.clientes #coi .cx').css('zIndex', '10');
 },function(){
 	$('#coi .bg-bt').removeClass('hoverBT');
-	$('.clientes #coi .cx').css('zIndex', '0');	
+	$('.clientes #coi .cx').css('zIndex', '0');
 });
 $('.clientes #coi a').attr('href', 'http://www.grupocoi.com.br/');
 
@@ -107,7 +108,7 @@ $('.clientes #hospitalys').hover(function(){
 	 $('.clientes #hospitalys .cx').css('zIndex', '10');
 },function(){
 	$('#hospitalys .bg-bt').removeClass('hoverBT');
-	$('.clientes #hospitalys .cx').css('zIndex', '0');	
+	$('.clientes #hospitalys .cx').css('zIndex', '0');
 });
 $('.clientes #hospitalys a').attr('href', 'http://www.hospitalys.com.br/');
 
@@ -118,7 +119,7 @@ $('.clientes #petrobras').hover(function(){
 	 $('.clientes #petrobras .cx').css('zIndex', '10');
 },function(){
 	$('#petrobras .bg-bt').removeClass('hoverBT');
-	$('.clientes #petrobras .cx').css('zIndex', '0');	
+	$('.clientes #petrobras .cx').css('zIndex', '0');
 });
 $('.clientes #petrobras a').attr('href', 'https://www.petrobras.com.br/');
 
@@ -128,7 +129,7 @@ $('.clientes #correios').hover(function(){
 	 $('.clientes #correios .cx').css('zIndex', '10');
 },function(){
 	$('#correios .bg-bt').removeClass('hoverBT');
-	$('.clientes #correios .cx').css('zIndex', '0');	
+	$('.clientes #correios .cx').css('zIndex', '0');
 });
 $('.clientes #correios a').attr('href', 'https://www.correios.com.br/');
 
@@ -139,7 +140,7 @@ $('.clientes #nestle-nutri').hover(function(){
 	 $('.clientes #nestle-nutri .cx').css('zIndex', '10');
 },function(){
 	$('#nestle-nutri .bg-bt').removeClass('hoverBT');
-	$('.clientes #nestle-nutri .cx').css('zIndex', '0');	
+	$('.clientes #nestle-nutri .cx').css('zIndex', '0');
 });
 $('.clientes #nestle-nutri a').attr('href', 'https://www.nestlenutrition.com.br/');
 
@@ -150,7 +151,7 @@ $('.clientes #nestle').hover(function(){
 	 $('.clientes #nestle .cx').css('zIndex', '10');
 },function(){
 	$('#nestle .bg-bt').removeClass('hoverBT');
-	$('.clientes #nestle .cx').css('zIndex', '0');	
+	$('.clientes #nestle .cx').css('zIndex', '0');
 });
 $('.clientes #nestle a').attr('href', 'https://www.nestle.com.br/');
 
@@ -160,7 +161,7 @@ $('.clientes #nestle-health').hover(function(){
 	 $('.clientes #nestle-health .cx').css('zIndex', '10');
 },function(){
 	$('#nestle-health .bg-bt').removeClass('hoverBT');
-	$('.clientes #nestle-health .cx').css('zIndex', '0');	
+	$('.clientes #nestle-health .cx').css('zIndex', '0');
 });
 $('.clientes #nestle-health a').attr('href', 'https://www.nestlehealthscience.com.br/');
 
@@ -170,7 +171,7 @@ $('.clientes #norte-a-sul').hover(function(){
 	 $('.clientes #norte-a-sul .cx').css('zIndex', '10');
 },function(){
 	$('#norte-a-sul .bg-bt').removeClass('hoverBT');
-	$('.clientes #norte-a-sul .cx').css('zIndex', '0');	
+	$('.clientes #norte-a-sul .cx').css('zIndex', '0');
 });
 $('.clientes #norte-a-sul a').attr('href', 'http://www.norteasulcorretora.com.br/');
 
@@ -180,7 +181,7 @@ $('.clientes #pro-cardiaco').hover(function(){
 	 $('.clientes #pro-cardiaco .cx').css('zIndex', '10');
 },function(){
 	$('#pro-cardiaco .bg-bt').removeClass('hoverBT');
-	$('.clientes #pro-cardiaco .cx').css('zIndex', '0');	
+	$('.clientes #pro-cardiaco .cx').css('zIndex', '0');
 });
 $('.clientes #pro-cardiaco a').attr('href', 'http://www.hospitalprocardiaco.com.br/');
 
@@ -190,7 +191,7 @@ $('.clientes #rede-dor-sao-luiz').hover(function(){
 	 $('.clientes #rede-dor-sao-luiz .cx').css('zIndex', '10');
 },function(){
 	$('#rede-dor-sao-luiz .bg-bt').removeClass('hoverBT');
-	$('.clientes #rede-dor-sao-luiz .cx').css('zIndex', '0');	
+	$('.clientes #rede-dor-sao-luiz .cx').css('zIndex', '0');
 });
 $('.clientes #rede-dor-sao-luiz a').attr('href', 'http://www.rededor.com.br/');
 
@@ -200,7 +201,7 @@ $('.clientes #samaritano').hover(function(){
 	 $('.clientes #samaritano .cx').css('zIndex', '10');
 },function(){
 	$('#samaritano .bg-bt').removeClass('hoverBT');
-	$('.clientes #samaritano .cx').css('zIndex', '0');	
+	$('.clientes #samaritano .cx').css('zIndex', '0');
 });
 $('.clientes #samaritano a').attr('href', 'http://www.hsamaritano.com.br/');
 
@@ -210,7 +211,7 @@ $('.clientes #santa-lucia').hover(function(){
 	 $('.clientes #santa-lucia .cx').css('zIndex', '10');
 },function(){
 	$('#santa-lucia .bg-bt').removeClass('hoverBT');
-	$('.clientes #santa-lucia .cx').css('zIndex', '0');	
+	$('.clientes #santa-lucia .cx').css('zIndex', '0');
 });
 $('.clientes #santa-lucia a').attr('href', 'http://www.hmsantalucia.com.br/');
 
@@ -228,16 +229,16 @@ $(window).scroll(function () {
 if ($(this).scrollTop() > posicaoTopEstrutura.top) {
 
 		$('.projetos').addClass('cores-estrutura');
-		$('.projetos').removeClass('sem-cores-estrutura');		
-		
-	} 
+		$('.projetos').removeClass('sem-cores-estrutura');
+
+	}
 	else {
 		$('.projetos').addClass('sem-cores-estrutura');
 		$('.projetos').removeClass('cores-estrutura');
 	}
 
 
-if ($(this).scrollTop() > posicaoTopProjetos.top) {	
+if ($(this).scrollTop() > posicaoTopProjetos.top) {
 
 		// $('.projetos h1').css({
 		// 	position: 'fixed',
@@ -250,7 +251,7 @@ if ($(this).scrollTop() > posicaoTopProjetos.top) {
 
 		$('.projetos').addClass('sem-cores-estrutura');
 		$('.projetos').removeClass('cores-estrutura');
-	 	
+
 
 	if ($(this).scrollTop() > posicaoTopClientes.top) {
 
@@ -259,9 +260,9 @@ if ($(this).scrollTop() > posicaoTopProjetos.top) {
 			top: '0',
 			right: '0'
 		});
-		
-	} 
-} 
+
+	}
+}
 
 else{
 
@@ -285,7 +286,7 @@ $('.header #servicos').click(function(){
 	var target = $('.estrutura').offset().top + 1;
     $('html,body').animate({
         scrollTop: target
-    }, 500);	
+    }, 500);
 
 });
 
@@ -294,7 +295,7 @@ $('.header #projetos').click(function(){
 	var target = $('.projetos').offset().top + 1;
     $('html,body').animate({
         scrollTop: target
-    }, 500);	
+    }, 500);
 
 });
 
@@ -303,7 +304,7 @@ $('.header #clientes').click(function(){
 	var target = $('.clientes').offset().top + 1;
     $('html,body').animate({
         scrollTop: target
-    }, 500);	
+    }, 500);
 
 });
 
@@ -312,7 +313,7 @@ $('.header #atendimento').click(function(){
 	var target = $('.atendimento').offset().top + 1;
     $('html,body').animate({
         scrollTop: target
-    }, 500);	
+    }, 500);
 
 });
 
@@ -321,7 +322,7 @@ $('.footer #servicos').click(function(){
 	var target = $('.header').offset().top - 1;
     $('html,body').animate({
         scrollTop: target
-    }, 500);	
+    }, 500);
 
 });
 
@@ -330,7 +331,7 @@ $('.footer #projetos').click(function(){
 	var target = $('.projetos').offset().top - 1;
     $('html,body').animate({
         scrollTop: target
-    }, 500);	
+    }, 500);
 
 });
 
@@ -339,7 +340,7 @@ $('.footer #eventos').click(function(){
 	var target = $('.eventos').offset().top - 1;
     $('html,body').animate({
         scrollTop: target
-    }, 500);	
+    }, 500);
 
 });
 
@@ -348,7 +349,7 @@ $('.footer #clientes').click(function(){
 	var target = $('.clientes').offset().top - 1;
     $('html,body').animate({
         scrollTop: target
-    }, 500);	
+    }, 500);
 
 });
 
@@ -357,7 +358,7 @@ $('.footer #atendimento').click(function(){
 	var target = $('.atendimento').offset().top - 1;
     $('html,body').animate({
         scrollTop: target
-    }, 500);	
+    }, 500);
 
 });
 
