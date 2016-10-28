@@ -648,6 +648,10 @@ ul.social {
 
 #slide {
 	position: relative;	
+
+	& .img-responsive {
+		width: 100% !important;
+	}
 }
 
 
